@@ -808,7 +808,7 @@ MonoBehaviour:
   startHealth: 100
   maxSpeed: 10
   speed: 0
-  jumpForce: 15
+  jumpForce: 20.85
   isGrounded: 1
   groundRadius: 0.1
   whatIsGround:
