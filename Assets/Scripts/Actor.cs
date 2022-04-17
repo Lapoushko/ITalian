@@ -9,6 +9,9 @@ public class Actor : MonoBehaviour
     public float speed = 0f;
     bool moving = true;
 
+    public string nameActor;
+
+
     [Header ("Jump")]
     public float jumpForce = 100f;
     public bool isGrounded = true;
@@ -26,13 +29,14 @@ public class Actor : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         sr = this.GetComponent<SpriteRenderer>();
         this.health = startHealth;
+        this.nameActor = gameObject.name;
         //gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
-    private void LateUpdate()
-    {
-        this.isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-    }
+    //private void LateUpdate()
+    //{
+    //    this.isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+    //}
 
     public void Move(int dirrection, bool isLeft)
     {
@@ -66,9 +70,21 @@ public class Actor : MonoBehaviour
     public void GetDamage(float damage)
     {
         health -= damage;
-        if (this.health < 0)
+        if (this.health <= 0)
         {
             GameObject.Destroy(gameObject);
+        }
+    }
+    
+    public void MoveFly(float forceUp, float speedx, GameObject target)
+    {
+        if (target)
+        {
+            if (target.transform.position.x >= transform.position.x + 2f) rb.velocity = new Vector2(speedx, rb.velocity.y);
+            else if (target.transform.position.x <= transform.position.x - 2f) rb.velocity = new Vector2(-speedx, rb.velocity.y);
+
+            if (target.transform.position.y < transform.position.y) rb.AddForce(Vector2.down * Time.deltaTime * forceUp);
+            else if (target.transform.position.y > transform.position.y) rb.AddForce(Vector2.up * Time.deltaTime * forceUp);
         }
     }
 }

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class Virus : MonoBehaviour
+public class Virus : Actor
 {
-    public float speed = 3.5f;
     private Vector3 dir;
     private SpriteRenderer sprite;
 
     private new void Start()
     {
+        base.Start();
         dir = transform.right;   
     }
 

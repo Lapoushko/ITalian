@@ -8,6 +8,11 @@ public class Player : Actor
         this.health = base.startHealth;
     }
 
+    private void LateUpdate()
+    {
+        this.isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+    }
+
     private void FixedUpdate()
     {
         //this.Move(0);
@@ -19,6 +24,17 @@ public class Player : Actor
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             return;
         if (Input.GetKey(KeyCode.Z)) this.GetDamage(10f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Enemy":
+                GetDamage(20);
+                break;
+        }
+                        
     }
 
 }
