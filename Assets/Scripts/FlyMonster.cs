@@ -12,7 +12,7 @@ public class FlyMonster : Actor
     {
         base.Start();
         target = GameObject.Find("Player");
-        this.health = base.startHealth;
+        this.health = base.maxHealth;
     }
 
     public void Update()

@@ -1,11 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Actor
 {
+    HealthHearts healthController;
+
     public new void Start()
     {
         base.Start();
-        this.health = base.startHealth;
+        this.health = base.maxHealth;
+        healthController = GameObject.Find("HealthController").GetComponent<HealthHearts>();
     }
 
     private void LateUpdate()
@@ -33,8 +37,7 @@ public class Player : Actor
             case "Enemy":
                 GetDamage(20);
                 break;
-        }
-                        
+        }        
+        healthController.UpdateHealth(maxHealth, health);
     }
-
 }

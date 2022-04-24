@@ -3,7 +3,7 @@ using UnityEngine;
 public class Actor : MonoBehaviour
 {
     public float health = 0f;
-    public float startHealth = 100f;
+    public float maxHealth = 100f;
 
     public float maxSpeed = 20f;
     public float speed = 0f;
@@ -28,7 +28,7 @@ public class Actor : MonoBehaviour
     {        
         rb = this.GetComponent<Rigidbody2D>();
         sr = this.GetComponent<SpriteRenderer>();
-        this.health = startHealth;
+        this.health = maxHealth;
         this.nameActor = gameObject.name;
         //gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
@@ -86,5 +86,6 @@ public class Actor : MonoBehaviour
             if (target.transform.position.y < transform.position.y) rb.AddForce(Vector2.down * Time.deltaTime * forceUp);
             else if (target.transform.position.y > transform.position.y) rb.AddForce(Vector2.up * Time.deltaTime * forceUp);
         }
-    }
+    }   
+      
 }

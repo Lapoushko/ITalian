@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class Virus : Actor
 {
-    private Vector3 dir;
     private SpriteRenderer sprite;
+    Vector3 startPos;
+    Vector3 endPos;
+    public float speed;
+    public float distance;
+    private Vector3 dir;
 
     private new void Start()
     {
         base.Start();
-        dir = transform.right;   
+        startPos = transform.position;
+        endPos = new Vector2(transform.position.x + distance, transform.position.y);
     }
 
     private void Update()
