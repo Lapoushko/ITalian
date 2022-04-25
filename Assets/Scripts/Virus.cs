@@ -2,18 +2,13 @@ using UnityEngine;
 
 public class Virus : Actor
 {
-    private SpriteRenderer sprite;
-    Vector3 startPos;
-    Vector3 endPos;
-    public float speed;
-    public float distance;
     private Vector3 dir;
+    private SpriteRenderer sprite;
 
     private new void Start()
     {
         base.Start();
-        startPos = transform.position;
-        endPos = new Vector2(transform.position.x + distance, transform.position.y);
+        dir = transform.right;
     }
 
     private void Update()
@@ -28,4 +23,5 @@ public class Virus : Actor
         if (colliders.Length > 0) dir *= -1f;
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
     }
+
 }
