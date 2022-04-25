@@ -4,6 +4,7 @@ public class Actor : MonoBehaviour
 {
     public float health = 0f;
     public float maxHealth = 100f;
+    public int damageReceived = 1;
 
     public float maxSpeed = 20f;
     public float speed = 0f;
@@ -30,13 +31,7 @@ public class Actor : MonoBehaviour
         sr = this.GetComponent<SpriteRenderer>();
         this.health = maxHealth;
         this.nameActor = gameObject.name;
-        //gameController = GameObject.Find("GameController").GetComponent<GameController>();
     }
-
-    //private void LateUpdate()
-    //{
-    //    this.isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-    //}
 
     public void Move(int dirrection, bool isLeft)
     {

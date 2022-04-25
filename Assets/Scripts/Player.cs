@@ -35,7 +35,7 @@ public class Player : Actor
         switch (collision.gameObject.tag)
         {
             case "Enemy":
-                GetDamage(20);
+                GetDamage(damageReceived);
                 break;
         }        
         healthController.UpdateHealth(maxHealth, health);

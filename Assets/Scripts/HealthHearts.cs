@@ -10,7 +10,7 @@ public class HealthHearts : MonoBehaviour
 
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < health / 20)
+            if (i < health)
             {
                 hearts[i].enabled = true;              
             }

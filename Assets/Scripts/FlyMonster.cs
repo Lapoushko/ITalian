@@ -25,7 +25,7 @@ public class FlyMonster : Actor
         switch (collision.gameObject.tag)
         {
             case "Player":
-                GetDamage(20);
+                GetDamage(damageReceived);
                 break;
         }
 
