@@ -20,8 +20,25 @@ public class Virus : Actor
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + transform.up * 0.1f + transform.right * dir.x * 0.7f, 0.1f);
 
-        if (colliders.Length > 0) dir *= -1f;
+        if (colliders.Length > 0.000) dir *= -1f;
         transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Player":
+                GetDamage(damageReceived);
+                break;
+        }
+
+        {
+            if (collision.gameObject.tag == "Ground")
+                dir *= 1f;
+        }
+
+    }
+
 
 }
