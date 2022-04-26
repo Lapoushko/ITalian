@@ -11,7 +11,7 @@ public class Actor : MonoBehaviour
     bool moving = true;
 
     public string nameActor;
-
+    private Animator anim;
 
     [Header ("Jump")]
     public float jumpForce = 100f;
@@ -31,6 +31,7 @@ public class Actor : MonoBehaviour
         sr = this.GetComponent<SpriteRenderer>();
         this.health = maxHealth;
         this.nameActor = gameObject.name;
+        anim = GetComponent<Animator>();
     }
 
     public void Move(int dirrection, bool isLeft)
@@ -38,6 +39,8 @@ public class Actor : MonoBehaviour
         this.moving = true;
         this.rb.velocity = new Vector2(this.maxSpeed * dirrection, this.rb.velocity.y);
         this.sr.flipX = isLeft;
+        anim.SetBool("isRunning", true);
+        Debug.Log(dirrection);
         if (dirrection == 0)
             StopMoving();
     }
@@ -45,6 +48,7 @@ public class Actor : MonoBehaviour
     protected void StopMoving()
     {
         this.moving = false;
+        anim.SetBool("isRunning", false);
     }
 
     public Rigidbody2D GetRb()

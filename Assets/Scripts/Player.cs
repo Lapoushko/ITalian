@@ -27,7 +27,7 @@ public class Player : Actor
         if (Input.GetKey(KeyCode.Space)) this.Jump();
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             return;
-        if (Input.GetKey(KeyCode.Z)) this.GetDamage(10f);
+        this.StopMoving();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
