@@ -22,7 +22,7 @@ public class Actor : MonoBehaviour
 
     [Header ("Conrollers")]
     Rigidbody2D rb;
-    SpriteRenderer sr;
+    protected SpriteRenderer sr;
     GameController gameController;
 
     public void Start()
