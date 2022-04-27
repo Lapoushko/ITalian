@@ -2,26 +2,28 @@ using UnityEngine;
 
 public class Virus : Actor
 {
-    private Vector3 dir;
+
     private SpriteRenderer sprite;
+    private Rigidbody2D rb;
+    public  float distance;
+    public float maxDistance;
+    public float minDistance;
+
 
     private new void Start()
     {
         base.Start();
-        dir = transform.right;
+        maxDistance = transform.position.x + distance;
+        minDistance = transform.position.x - distance;
     }
 
     private void Update()
     {
-        Move();
-    }
-
-    private void Move()
-    {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + transform.up * 0.1f + transform.right * dir.x * 0.7f, 0.1f);
-
-        if (colliders.Length > 0.000) dir *= -1f;
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + dir, Time.deltaTime);
+        transform.Translate(transform.right * speed * Time.deltaTime);
+        if (transform.position.x > maxDistance)
+            speed = -speed;
+        if (transform.position.x < minDistance)
+            speed = -speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -33,10 +35,6 @@ public class Virus : Actor
                 break;
         }
 
-        {
-            if (collision.gameObject.tag == "Ground")
-                dir *= 1f;
-        }
 
     }
 
