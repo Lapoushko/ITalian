@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEditor.UI;
+using UnityEditor;
 
 public class GameController : MonoBehaviour
 {
     public TextMeshProUGUI txtHealth;
     GameObject audio;
+    public GameObject textbook;
 
     private void Start()
     {
@@ -12,8 +15,24 @@ public class GameController : MonoBehaviour
         AudioManager.instance.Play("GameMusic");
     }
 
-    public void UpdateTxt(float health)
+    private void Update()
     {
-        txtHealth.text = "HEALTH" + health.ToString();
-    }   
+        if (Input.GetKeyDown(KeyCode.E)) TextbookOpen();
+    }
+
+    public void TextbookOpen()
+    {
+        if (textbook.gameObject.activeSelf)
+        {
+            textbook.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
+        else
+        {
+            textbook.gameObject.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+    }
+
 }

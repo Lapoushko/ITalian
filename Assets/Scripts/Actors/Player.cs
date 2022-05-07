@@ -34,7 +34,10 @@ public class Player : Actor
     {
         switch (collision.gameObject.tag)
         {
-            case "Enemy":
+            case "Virus":
+                GetDamage(damageReceived);
+                break;
+            case "FlyMonster":
                 GetDamage(damageReceived);
                 break;
         }        
