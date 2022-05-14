@@ -40,11 +40,7 @@ public class Virus : Actor
         {
             case "Player":
                 GetDamage(damageReceived);
-                break;
+                break;           
         }
-
-
     }
-
-
 }

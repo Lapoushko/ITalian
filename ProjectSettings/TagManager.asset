@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - FlyMonster
   - Virus
+  - Bullet
   layers:
   - Default
   - TransparentFX

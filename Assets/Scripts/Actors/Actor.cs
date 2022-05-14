@@ -12,6 +12,7 @@ public class Actor : MonoBehaviour
 
     public string nameActor;
     private Animator anim;
+    
 
     [Header ("Jump")]
     public float jumpForce = 100f;
@@ -21,7 +22,7 @@ public class Actor : MonoBehaviour
     public Transform groundCheck;
 
     [Header ("Conrollers")]
-    Rigidbody2D rb;
+    protected Rigidbody2D rb;
     protected SpriteRenderer sr;
     GameController gameController;
 
@@ -32,6 +33,7 @@ public class Actor : MonoBehaviour
         this.health = maxHealth;
         this.nameActor = gameObject.name;
         anim = GetComponent<Animator>();
+        
     }
 
     public void Move(int dirrection, bool isLeft)
@@ -40,7 +42,6 @@ public class Actor : MonoBehaviour
         this.rb.velocity = new Vector2(this.maxSpeed * dirrection, this.rb.velocity.y);
         this.sr.flipX = isLeft;
         anim.SetBool("isRunning", true);
-        Debug.Log(dirrection);
         if (dirrection == 0)
             StopMoving();
     }
@@ -63,6 +64,7 @@ public class Actor : MonoBehaviour
             this.isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
             this.rb.velocity = new Vector2(this.rb.velocity.x, 0.0f);
             this.rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            AudioManager.instance.Play("Jump");
         }
     }
 
@@ -71,6 +73,7 @@ public class Actor : MonoBehaviour
         health -= damage;
         if (this.health <= 0)
         {
+            AudioManager.instance.Play("Hit");
             GameObject.Destroy(gameObject);
         }
     }
@@ -85,6 +88,18 @@ public class Actor : MonoBehaviour
             if (target.transform.position.y < transform.position.y) rb.AddForce(Vector2.down * Time.deltaTime * forceUp);
             else if (target.transform.position.y > transform.position.y) rb.AddForce(Vector2.up * Time.deltaTime * forceUp);
         }
-    }   
-      
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (nameActor != "Player")
+        {
+            switch (collision.tag)
+            {
+                case "Bullet":
+                    GetDamage(1);
+                    break;
+            }
+        }
+    }
 }

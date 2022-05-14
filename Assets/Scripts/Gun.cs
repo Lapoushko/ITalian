@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float speedBullet;
-    public float damage;
+    public int speedBullet;
+    private float damage;
 
     public Transform shotPosition;
 
@@ -15,33 +15,42 @@ public class Gun : MonoBehaviour
     public bool ready;
     public float fireRate;
 
-    void Fire()
+    public void Fire(int rotate)
     {
         if (!this.ready) return;
-        this.SpawnBullet();
+        this.SpawnBullet(rotate);
         this.ready = false;
         this.Invoke("GetReady", fireRate);
-    }   
+    }
 
     void GetReady()
     {
         this.ready = true;
     }
 
-    void SpawnBullet()
+    void SpawnBullet(int rotate)
     {
-        GameObject gameObject = (this.transform.parent.name == "Player") ?
+        GameObject gj = (this.transform.parent.name == "Player") ?
             Instantiate<GameObject>(this.bullet, this.shotPosition.transform.position, this.transform.rotation) :
             Instantiate<GameObject>(this.enemyBullet, this.shotPosition.transform.position, this.transform.rotation);
-        gameObject.GetComponent<Rigidbody2D>().velocity = (Vector2)(this.transform.up * this.speedBullet);
+        gj.GetComponent<Rigidbody2D>().velocity = (Vector2)(this.transform.right * this.speedBullet);        
         if (this.transform.parent.name == "Player")
         {
-
+            AudioManager.instance.Play("Gun");
         }
         else
         {
 
         }
-        
+        ((Bullet)gj.GetComponent(typeof(Bullet))).SetDamage(this.damage);
+    }
+
+    public void Rotate(int rotate)
+    {
+        if (rotate == -1)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
+        else if (rotate == 1) transform.eulerAngles = new Vector3(0, 0, 0);
     }
 }

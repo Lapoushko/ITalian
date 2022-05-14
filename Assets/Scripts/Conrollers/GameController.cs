@@ -17,7 +17,11 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) TextbookOpen();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TextbookOpen();
+            AudioManager.instance.Play("Menu");
+        }
     }
 
     public void TextbookOpen()
