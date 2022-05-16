@@ -16,7 +16,11 @@ public class Player : Actor
         base.Start();
         this.health = base.maxHealth;
         healthController = GameObject.Find("HealthController").GetComponent<HealthHearts>();
-        ChangeWeapon();
+        index = 0;
+        guns[0].SetActive(true);
+        guns[1].SetActive(false);
+        guns[2].SetActive(false);
+        this.weaponScript[index].Rotate(rotate);
     }
 
     private void LateUpdate()

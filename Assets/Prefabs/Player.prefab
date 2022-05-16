@@ -164,7 +164,7 @@ MonoBehaviour:
   groundRadius: 0.1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   groundCheck: {fileID: 5069563628261962838}
   weaponScript:
   - {fileID: 6540687011769270492}
