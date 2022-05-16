@@ -9,11 +9,22 @@ public class MoveCamera : MonoBehaviour
     bool isLeft;
     Transform player;
     int lastX;
+    
+
+    [Header("Border")]
+    Camera cam;
+    public bool isBorder = false;
+    public float camMinX;
+    public float camMaxX;
+
+    public float camMinY;
+    public float camMaxY;
 
     void Start()
     {
         offset = new Vector2(Mathf.Abs(offset.x), offset.y);
         FindPlayer(isLeft);
+        cam = Camera.main;
     }
 
     public void FindPlayer(bool isLeft)
@@ -31,6 +42,13 @@ public class MoveCamera : MonoBehaviour
     {
         if (player)
         {
+            Vector3 camPosition = cam.transform.position;
+            camPosition.x = Mathf.Clamp(camPosition.x, camMinX, camMaxX);
+            camPosition.y = Mathf.Clamp(camPosition.y, camMinY, camMaxY);
+
+            cam.transform.position = camPosition;
+
+            Vector3 targetPos = player.position;
             var currentX = Mathf.RoundToInt(player.position.x);
             if (currentX > lastX) isLeft = false; else if (currentX < lastX) isLeft = true;
             lastX = Mathf.RoundToInt(player.position.x);
@@ -42,8 +60,8 @@ public class MoveCamera : MonoBehaviour
             }
             else
                 target = new Vector3(player.position.x + offset.x, player.position.y + offset.y, transform.position.z);
-
             transform.position = Vector3.Lerp(transform.position, target, dumping * Time.deltaTime);
+
         }
     }
 }
