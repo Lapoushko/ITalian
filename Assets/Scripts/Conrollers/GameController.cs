@@ -9,6 +9,12 @@ public class GameController : MonoBehaviour
     GameObject audio;
     public GameObject textbook;
 
+    public Transform[] controllsPoints;
+    public int indexControllPoints;
+
+    public GameObject dialog;
+    public bool isActivateDialog;
+
     private void Start()
     {
         audio = GameObject.Find("AudioManager");
@@ -17,10 +23,13 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (!isActivateDialog)
         {
-            TextbookOpen();
-            AudioManager.instance.Play("Menu");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                TextbookOpen();
+                AudioManager.instance.Play("Menu");
+            }
         }
     }
 
@@ -36,7 +45,10 @@ public class GameController : MonoBehaviour
             textbook.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
-
     }
 
+    public void TransformPlayer(GameObject player)
+    {
+        player.transform.position = controllsPoints[indexControllPoints].transform.position;
+    }
 }

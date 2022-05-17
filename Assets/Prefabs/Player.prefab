@@ -174,7 +174,7 @@ MonoBehaviour:
   - {fileID: 6540687011769270491}
   - {fileID: 6540687010824964253}
   - {fileID: 6540687011955968075}
-  index: 1
+  indexGun: 0
 --- !u!95 &5069563629702816717
 Animator:
   serializedVersion: 3
@@ -313,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2062513854761238542, guid: 2f9a257887993174ba3b97ea6d7184c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2062513854761238543, guid: 2f9a257887993174ba3b97ea6d7184c8, type: 3}
       propertyPath: m_RootOrder

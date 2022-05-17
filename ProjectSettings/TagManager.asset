@@ -10,6 +10,8 @@ TagManager:
   - FlyMonster
   - Virus
   - Bullet
+  - Trap
+  - DownBorder
   layers:
   - Default
   - TransparentFX
