@@ -11,10 +11,14 @@ public class MovePlatform : MonoBehaviour
     bool goend = false;
     Vector3 startPos;
     Vector3 endPos;
+    public bool isUp = false;
+
     private void Start()
     {
         startPos = transform.position;
-        endPos = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
+        if (isUp) endPos = new Vector3(transform.position.x , transform.position.y + distance, transform.position.z);
+        else
+         endPos = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
     }
 
     void FixedUpdate()
@@ -33,7 +37,10 @@ public class MovePlatform : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, startPos, lerpTime * Time.deltaTime);
             if (Vector3.Distance(transform.position, startPos) < minDst)
             {
-                endPos = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
+                if (isUp)
+                {
+                    endPos = new Vector3(transform.position.x, transform.position.y + distance, transform.position.z);
+                } else endPos = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
                 //lerpTime = Random.Range(4f, 7f);
                 goend = !goend;
             }

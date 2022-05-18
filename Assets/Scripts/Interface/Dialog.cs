@@ -11,12 +11,14 @@ public class Dialog : MonoBehaviour
     public string text;
     public float speed;
     float startSpeed;
-    GameController controller;
+    GameController controller;    
 
     public void Start()
     {
         controller = GameObject.Find("Controller").GetComponent<GameController>();
         controller.isActivateDialog = true;
+        var random = Random.Range(6, 10);
+        AudioManager.instance.Play(AudioManager.instance.sounds[random].name);
         startSpeed = speed;
         text = allTexts[index];
         textObject.text = "";
@@ -26,10 +28,10 @@ public class Dialog : MonoBehaviour
 
     // Update is called once per frame
     IEnumerator TextCoroutine()
-    {
+    {      
         foreach(char symbol in text)
-        {
-            textObject.text += symbol;            
+        {           
+            textObject.text += symbol;
             yield return new WaitForSeconds(speed);
         }
     }
@@ -50,9 +52,11 @@ public class Dialog : MonoBehaviour
 
     public void StartNewText()
     {
+        var random = Random.Range(6, 10);
+        AudioManager.instance.Play(AudioManager.instance.sounds[random].name);
         speed = startSpeed;
         text = allTexts[index];
-        textObject.text = "";
+        textObject.text = "";       
         StartCoroutine(TextCoroutine());
     }
 

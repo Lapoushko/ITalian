@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 5069563629702816713}
   - component: {fileID: 5069563629702816716}
   - component: {fileID: 5069563629702816717}
-  - component: {fileID: 5069563629702816712}
+  - component: {fileID: 3669690468716814201}
+  - component: {fileID: 2504338518372599444}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -108,7 +109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 5b9b9ca66d677b7408cf2e194c6c3586, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -194,7 +195,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &5069563629702816712
+--- !u!70 &3669690468716814201
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,9 +208,35 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.25, y: 3.21}
+  m_Offset: {x: 0.07458329, y: -0.79058856}
+  m_Size: {x: 1.4056373, y: 1.7934729}
   m_Direction: 0
+--- !u!61 &2504338518372599444
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5069563629702816711}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.026682854, y: 0.6048099}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6, y: 6}
+    newSize: {x: 2.25, y: 3.21}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1043148, y: 1.4461389}
+  m_EdgeRadius: 0
 --- !u!1001 &5069563628717869125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -217,6 +244,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5069563629702816715}
     m_Modifications:
+    - target: {fileID: 2062513854358354646, guid: 332f98b7915f6d44785f8adf408c30f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062513854358354646, guid: 332f98b7915f6d44785f8adf408c30f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 2062513854761238542, guid: 332f98b7915f6d44785f8adf408c30f0, type: 3}
       propertyPath: m_Name
       value: ThirdGuns
@@ -301,7 +336,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2062513854358354646, guid: 2f9a257887993174ba3b97ea6d7184c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.41
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062513854358354646, guid: 2f9a257887993174ba3b97ea6d7184c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.19999999
       objectReference: {fileID: 0}
     - target: {fileID: 2062513854761238537, guid: 2f9a257887993174ba3b97ea6d7184c8, type: 3}
       propertyPath: enemyBullet
@@ -389,6 +428,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5069563629702816715}
     m_Modifications:
+    - target: {fileID: 2062513854358354646, guid: 2e6a9008bea5503468f1d51da0e3906e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062513854358354646, guid: 2e6a9008bea5503468f1d51da0e3906e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.23
+      objectReference: {fileID: 0}
     - target: {fileID: 2062513854761238542, guid: 2e6a9008bea5503468f1d51da0e3906e, type: 3}
       propertyPath: m_Name
       value: SecondGun

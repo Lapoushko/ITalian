@@ -28,17 +28,20 @@ public class MiniVirus : Actor
 
     private void Update()
     {
-        if (isFollower && 
-            (gameObject.transform.position.x- distance <= target.transform.position.x
-            && gameObject.transform.position.x + distance >= target.transform.position.x))
+        if (target)
         {
-            MoveFly(forceUp, speedx, target);
-        }
-        else
-        {
-            t = t + Time.deltaTime;
-            offset = amp * Mathf.Sin(t * freq);
-            transform.position = startPos + new Vector3(0, offset, 0);
+            if (isFollower &&
+                (gameObject.transform.position.x - distance <= target.transform.position.x
+                && gameObject.transform.position.x + distance >= target.transform.position.x))
+            {
+                MoveFly(forceUp, speedx, target);
+            }
+            else
+            {
+                t = t + Time.deltaTime;
+                offset = amp * Mathf.Sin(t * freq);
+                transform.position = startPos + new Vector3(0, offset, 0);
+            }
         }
         transform.Rotate(new Vector3(0f, 0f, speedRotate * Time.deltaTime));
     }

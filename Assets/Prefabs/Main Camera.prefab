@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70.17, y: -227.59}
+  m_AnchoredPosition: {x: -70.17, y: -210}
   m_SizeDelta: {x: 786.06, y: 127.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5891250140176951908
@@ -968,11 +968,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e8ca66d527b2247be74fdcde9c7051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: 
   txtHealth: {fileID: 0}
   textbook: {fileID: 1906684266253311911}
   controllsPoints: []
   indexControllPoints: 0
   dialog: {fileID: 3009872811687701854}
+  isActivateDialog: 0
 --- !u!1 &1906684265149055684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,7 +1791,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: d1542d8c754fbd54a9bdcc9f6e4aedb1, type: 3}
     m_FontSize: 24
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40

@@ -80,5 +80,41 @@ MonoBehaviour:
     pitch: 0.68
     loop: 0
     source: {fileID: 0}
+  - name: keyboard1
+    clip: {fileID: 8300000, guid: 1e5b41a6dd040a44a9bd926937f18119, type: 3}
+    volume: 0.65
+    pitch: 0.68
+    loop: 0
+    source: {fileID: 0}
+  - name: keyboard2
+    clip: {fileID: 8300000, guid: 1c3322aebf2cd6e4d990ec20d3f8615f, type: 3}
+    volume: 1
+    pitch: 0.68
+    loop: 0
+    source: {fileID: 0}
+  - name: keyboard3
+    clip: {fileID: 8300000, guid: 157d149e51d28b94e9a08d2ffa419e6d, type: 3}
+    volume: 1
+    pitch: 0.68
+    loop: 0
+    source: {fileID: 0}
+  - name: keyboard4
+    clip: {fileID: 8300000, guid: 2487fa6a4383dee4680516348d526062, type: 3}
+    volume: 1
+    pitch: 0.68
+    loop: 0
+    source: {fileID: 0}
+  - name: keyboard5
+    clip: {fileID: 8300000, guid: f57c18cdc5b41b7439a586c6b002d61a, type: 3}
+    volume: 1
+    pitch: 0.68
+    loop: 0
+    source: {fileID: 0}
+  - name: Powerup
+    clip: {fileID: 8300000, guid: f7fb889af2b942340acf731d40d8765b, type: 3}
+    volume: 1
+    pitch: 0.68
+    loop: 0
+    source: {fileID: 0}
   muteMusic: 1
   muted: 0

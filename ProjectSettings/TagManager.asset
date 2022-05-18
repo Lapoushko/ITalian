@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - Trap
   - DownBorder
+  - HealthKit
   layers:
   - Default
   - TransparentFX

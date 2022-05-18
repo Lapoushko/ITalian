@@ -5,6 +5,8 @@ using UnityEditor;
 
 public class GameController : MonoBehaviour
 {
+    public string nextLevel;
+
     public TextMeshProUGUI txtHealth;
     GameObject audio;
     public GameObject textbook;
