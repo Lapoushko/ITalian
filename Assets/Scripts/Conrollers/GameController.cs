@@ -1,7 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEditor.UI;
-using UnityEditor;
 
 public class GameController : MonoBehaviour
 {
