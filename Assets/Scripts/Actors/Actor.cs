@@ -10,9 +10,7 @@ public class Actor : MonoBehaviour
     public float speed = 0f;
     bool moving = true;
 
-    public string nameActor;
-
-    
+    public string nameActor;    
 
     [Header ("Jump")]
     public float jumpForce = 100f;
@@ -39,9 +37,7 @@ public class Actor : MonoBehaviour
         this.moving = true;
         this.rb.velocity = new Vector2(this.maxSpeed * dirrection, this.rb.velocity.y);
         this.sr.flipX = isLeft;        
-    }
-
-    
+    }    
 
     public Rigidbody2D GetRb()
     {
@@ -83,14 +79,9 @@ public class Actor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (nameActor != "Player")
-        {
-            switch (collision.tag)
-            {
-                case "Bullet":
-                    GetDamage(1);
-                    break;
-            }
-        }
+        //if (nameActor != "Player")
+        //{
+        //    if ()
+        //}
     }
 }

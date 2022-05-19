@@ -55,4 +55,11 @@ public class MiniVirus : Actor
                 break;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BulletThird") 
+            || collision.gameObject.CompareTag("BulletFirst")
+            || collision.gameObject.CompareTag("BulletSecond")) GetDamage(1);
+    }
 }

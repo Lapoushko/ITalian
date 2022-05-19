@@ -13,6 +13,10 @@ TagManager:
   - Trap
   - DownBorder
   - HealthKit
+  - BulletEnemy
+  - BulletFirst
+  - BulletSecond
+  - BulletThird
   layers:
   - Default
   - TransparentFX

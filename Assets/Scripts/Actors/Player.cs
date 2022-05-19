@@ -33,7 +33,7 @@ public class Player : Actor
     private void LateUpdate()
     {
         this.isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-        if (health <= 0) SceneManager.LoadScene(gameControl.nextLevel);
+        if (health <= 0) SceneManager.LoadScene(0);
     }
 
     private void FixedUpdate()
@@ -109,6 +109,9 @@ public class Player : Actor
                 break;
             case "Finish":
                 SceneManager.LoadScene(gameControl.nextLevel);
+                break;
+            case "BulletEnemy":
+                GetDamage(1);
                 break;
         }
         healthController.UpdateHealth(maxHealth, health);

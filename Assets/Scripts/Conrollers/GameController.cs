@@ -14,10 +14,11 @@ public class GameController : MonoBehaviour
 
     public GameObject dialog;
     public bool isActivateDialog;
+    public bool isBossCanMoving;
 
     private void Start()
     {
-        audio = GameObject.Find("AudioManager");
+       // audio = GameObject.Find("AudioManager");
         AudioManager.instance.Play("GameMusic");
     }
 

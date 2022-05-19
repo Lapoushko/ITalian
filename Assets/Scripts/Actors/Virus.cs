@@ -43,4 +43,10 @@ public class Virus : Actor
                 break;           
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BulletSecond")) GetDamage(1);
+        else if (collision.gameObject.CompareTag("BulletThird") || collision.gameObject.CompareTag("BulletFirst")) Debug.Log("No!");
+    }
 }

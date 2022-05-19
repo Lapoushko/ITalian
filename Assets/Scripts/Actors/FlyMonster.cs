@@ -26,6 +26,11 @@ public class FlyMonster : Actor
                 GetDamage(damageReceived);
                 break;
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("BulletThird")) GetDamage(1);
+        else if (collision.gameObject.CompareTag("BulletFirst") || collision.gameObject.CompareTag("BulletSecond")) Debug.Log("No!");
     }
 }

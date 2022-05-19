@@ -71,5 +71,6 @@ public class Dialog : MonoBehaviour
         gameObject.SetActive(false);
         index = 0;
         controller.isActivateDialog = false;
+        controller.isBossCanMoving = true;
     }
 }
