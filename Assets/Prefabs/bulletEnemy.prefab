@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.16898918
       objectReference: {fileID: 0}
+    - target: {fileID: 20551213867704272, guid: d164eed31a4b42f47904d2cfc24bda2f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 20551213867704274, guid: d164eed31a4b42f47904d2cfc24bda2f, type: 3}
       propertyPath: m_Name
       value: bulletEnemy

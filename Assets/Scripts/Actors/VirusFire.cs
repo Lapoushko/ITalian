@@ -25,27 +25,30 @@ public class VirusFire : Actor
 
     void Update()
     {
-        if (player.transform.position.x >= transform.position.x)
+        if (player)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-            rotate = -1;
-        }
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            rotate = 1;
-        }
-
-        if (controller.isBossCanMoving)
-        {
-            time += Time.deltaTime;
-            if (time >= timeRespawn)
+            if (player.transform.position.x >= transform.position.x)
             {
-                NewPosition();
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                rotate = -1;
             }
-            Fire(rotate);
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                rotate = 1;
+            }
+
+            if (controller.isBossCanMoving)
+            {
+                time += Time.deltaTime;
+                if (time >= timeRespawn)
+                {
+                    NewPosition();
+                }
+                Fire(rotate);
+            }
+            
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -70,9 +73,9 @@ public class VirusFire : Actor
 
     protected void Fire(int rotate)
     {
-        if (!this.weaponScript.ready)
-            return;
+        if (!this.weaponScript.ready) { Debug.Log("333"); return; }
         this.weaponScript.Fire(rotate);
+        this.weaponScript.Rotate(rotate);
         this.rb.AddForce((Vector2)(-this.gameObject.transform.up));
     }
 }
