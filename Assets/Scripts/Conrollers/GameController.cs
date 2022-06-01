@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -24,6 +25,11 @@ public class GameController : MonoBehaviour
     public GameObject ContentGuns;
     public GameObject ContentVirus_1;
     public GameObject ContentVirus_2;
+
+    [Header("Questions")]
+    public GameObject QuestionPanel;
+    public GameObject[] QuestionArray;
+    public int indexQuestion;
 
     private void Start()
     {
@@ -85,5 +91,28 @@ public class GameController : MonoBehaviour
         }
         SelectedMenu = ButtonNext;
         AudioManager.instance.Play("ButtonMenu");
+    }
+
+    public void UnlockQuestionPanel()
+    {
+        QuestionPanel.SetActive(true);
+    }
+
+    public void AnswerQuestion(bool isTrue)
+    {
+        if (!isTrue)
+        {
+            QuestionArray[0].SetActive(true);
+            QuestionArray[1].SetActive(false);
+            QuestionArray[2].SetActive(false);
+            indexQuestion = 0;
+        } else
+        {
+            QuestionArray[indexQuestion].SetActive(false);
+            indexQuestion++;
+            if (indexQuestion > QuestionArray.Length) SceneManager.LoadScene(nextLevel);
+            
+            QuestionArray[indexQuestion].SetActive(true);
+        }
     }
 }

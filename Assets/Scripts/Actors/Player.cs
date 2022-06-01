@@ -108,7 +108,7 @@ public class Player : Actor
                 health = maxHealth;
                 break;
             case "Finish":
-                SceneManager.LoadScene(gameControl.nextLevel);
+                gameControl.UnlockQuestionPanel();
                 break;
             case "BulletEnemy":
                 GetDamage(1);
