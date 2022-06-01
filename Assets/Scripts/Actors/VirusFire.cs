@@ -60,6 +60,7 @@ public class VirusFire : Actor
             var rnd = Random.Range(0, pointsSpawn.Length - 1);
             transform.position = pointsSpawn[rnd].transform.position;
             time = 0;
+            GetDamage(1);
         }
         else if (collision.gameObject.CompareTag("BulletSecond") || collision.gameObject.CompareTag("BulletThird")) Debug.Log("loh");
     }

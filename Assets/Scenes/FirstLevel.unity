@@ -1930,19 +1930,19 @@ PrefabInstance:
       objectReference: {fileID: 1895348426}
     - target: {fileID: 1906684266253311908, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 775.11
+      value: 980
       objectReference: {fileID: 0}
     - target: {fileID: 1906684266253311908, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 293.21
+      value: 980
       objectReference: {fileID: 0}
     - target: {fileID: 1906684266253311908, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -442
+      value: -440
       objectReference: {fileID: 0}
     - target: {fileID: 1906684266253311908, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -223.07
+      value: -210
       objectReference: {fileID: 0}
     - target: {fileID: 1906684266253311911, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: m_IsActive
