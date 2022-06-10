@@ -86,12 +86,18 @@ public class Player : Actor
         {
             case "Enemy":
                 GetDamage(damageReceived);
+                AudioManager.instance.Play("Hit");
                 break;
             case "Trap":
                 GetDamage(damageReceived);
                 gameControl.TransformPlayer(gameObject);
                 AudioManager.instance.Play("Hit");
-                break;            
+                break;
+            case "EnemyRunVirus":
+                GetDamage(damageReceived);
+                gameControl.TransformPlayer(gameObject);
+                AudioManager.instance.Play("Hit");
+                break;
         }
         healthController.UpdateHealth(maxHealth, health);
     }

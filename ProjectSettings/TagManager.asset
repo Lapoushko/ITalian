@@ -17,6 +17,7 @@ TagManager:
   - BulletFirst
   - BulletSecond
   - BulletThird
+  - EnemyRunVirus
   layers:
   - Default
   - TransparentFX

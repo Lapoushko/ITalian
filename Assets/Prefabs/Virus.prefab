@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 7455797423493455371}
   - component: {fileID: 7455797423493455365}
   - component: {fileID: 7455797423493455369}
-  - component: {fileID: 7455797423493455370}
+  - component: {fileID: 2733753065074621134}
+  - component: {fileID: 1546211361417082377}
   m_Layer: 0
   m_Name: Virus
-  m_TagString: Enemy
+  m_TagString: EnemyRunVirus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7455797423493455364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.6, y: -0.79, z: 0}
-  m_LocalScale: {x: 0.71900624, y: 0.767345, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2470318969781736756, guid: be0f2c02fe09ef14790ba96b234d4eba, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 7871484987525548144, guid: d396ee294b894494a80860d1aca3c383, type: 3}
+  m_Color: {r: 1, g: 0.8160377, b: 0.8160377, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,10 +98,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -118,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5105a59b304e5fb428e0f925001845e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  maxHealth: 1
+  health: 4
+  maxHealth: 4
   damageReceived: 1
   maxSpeed: 20
   speed: 2
@@ -134,7 +135,26 @@ MonoBehaviour:
   distance: 18
   maxDistance: 100
   minDistance: 1
---- !u!68 &7455797423493455370
+--- !u!95 &2733753065074621134
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455797423493455364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa381fb92a775864d8df630f327fffa9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &1546211361417082377
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,18 +170,16 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 1.4832158, y: -1.8205116}
-  - {x: 1.296479, y: 1.6077287}
-  - {x: 0.9611891, y: 1.8938372}
-  - {x: 0.32675585, y: 1.6341838}
-  - {x: -0.28324425, y: 1.1463764}
-  - {x: -0.9879649, y: 0.53395116}
-  - {x: -1.0796682, y: -0.12383718}
-  - {x: -0.7900322, y: -0.75874543}
-  - {x: -1.3645701, y: -0.94137144}
-  - {x: -1.4303758, y: -1.3009334}
-  - {x: -1.1682609, y: -1.8326488}
-  - {x: 1.4959055, y: -1.820512}
+  - {x: 1.7843769, y: -1.4386274}
+  - {x: -1.3662947, y: -1.4172534}
+  - {x: -1.789676, y: -0.17987083}
+  - {x: -1.2731099, y: 0.5300926}
+  - {x: -1.1042778, y: 1.2824973}
+  - {x: 0.64154506, y: 1.4381294}
+  - {x: 1.5916934, y: 0.78735894}
+  - {x: 1.79375, y: 0.123625785}
+  - {x: 1.7180257, y: -0.4232159}
+  - {x: 1.7861952, y: -1.4609318}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

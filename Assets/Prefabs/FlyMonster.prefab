@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2514074288685501233}
   - component: {fileID: 2514074288685501198}
   - component: {fileID: 2514074288685501234}
+  - component: {fileID: 5122245680481532161}
   m_Layer: 0
   m_Name: FlyMonster
   m_TagString: Enemy
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2314603869952930285, guid: be0f2c02fe09ef14790ba96b234d4eba, type: 3}
-  m_Color: {r: 1, g: 0.6745283, b: 0.6745283, a: 1}
+  m_Sprite: {fileID: 2267079229065819517, guid: 897404a10e2683b4db34a4da81a3c6e5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,7 +124,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.54, y: 2.35}
+    oldSize: {x: 5.58, y: 2.4317007}
     newSize: {x: 4.54, y: 2.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -265,3 +266,22 @@ MonoBehaviour:
   speedx: 2
   forceUp: 4000
   target: {fileID: 0}
+--- !u!95 &5122245680481532161
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514074288685501199}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10d6d953ad080ee48bab63728455e45c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
