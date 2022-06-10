@@ -56,7 +56,7 @@ public class Dialog : MonoBehaviour
         AudioManager.instance.Play(AudioManager.instance.sounds[random].name);
         speed = startSpeed;
         text = allTexts[index];
-        textObject.text = "";       
+        textObject.text = "";
         StartCoroutine(TextCoroutine());
     }
 

@@ -95,7 +95,11 @@ public class GameController : MonoBehaviour
 
     public void UnlockQuestionPanel()
     {
-        QuestionPanel.SetActive(true);
+        if (QuestionArray.Length != 0)
+        {
+            QuestionPanel.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void AnswerQuestion(bool isTrue)
@@ -110,7 +114,11 @@ public class GameController : MonoBehaviour
         {
             QuestionArray[indexQuestion].SetActive(false);
             indexQuestion++;
-            if (indexQuestion > QuestionArray.Length) SceneManager.LoadScene(nextLevel);
+            if (indexQuestion + 1 > QuestionArray.Length)
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene(nextLevel);
+            }
             
             QuestionArray[indexQuestion].SetActive(true);
         }

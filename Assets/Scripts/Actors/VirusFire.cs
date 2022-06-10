@@ -38,7 +38,7 @@ public class VirusFire : Actor
                 rotate = 1;
             }
 
-            if (controller.isBossCanMoving)
+            if (isBoss && controller.isBossCanMoving)
             {
                 time += Time.deltaTime;
                 if (time >= timeRespawn)
@@ -47,20 +47,24 @@ public class VirusFire : Actor
                 }
                 Fire(rotate);
             }
-            
+            else if (!isBoss) Fire(rotate);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("BulletFirst"))
-        {
-            particleNewPos.transform.position = transform.position;
-            Instantiate(particleNewPos);
-            var rnd = Random.Range(0, pointsSpawn.Length - 1);
-            transform.position = pointsSpawn[rnd].transform.position;
-            time = 0;
+        {            
+            if (isBoss)
+            {
+                particleNewPos.transform.position = transform.position;
+                Instantiate(particleNewPos);
+                var rnd = Random.Range(0, pointsSpawn.Length - 1);
+                transform.position = pointsSpawn[rnd].transform.position;
+                time = 0;
+            }
             GetDamage(1);
+            if (isBoss && health <= 0) controller.UnlockQuestionPanel();
         }
         else if (collision.gameObject.CompareTag("BulletSecond") || collision.gameObject.CompareTag("BulletThird")) Debug.Log("loh");
     }
@@ -74,7 +78,7 @@ public class VirusFire : Actor
 
     protected void Fire(int rotate)
     {
-        if (!this.weaponScript.ready) { Debug.Log("333"); return; }
+        if (!this.weaponScript.ready) {  }
         this.weaponScript.Fire(rotate);
         this.weaponScript.Rotate(rotate);
         this.rb.AddForce((Vector2)(-this.gameObject.transform.up));
