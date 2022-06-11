@@ -50,6 +50,12 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: Game Music 2
+    clip: {fileID: 8300000, guid: 1cbefbd8a85bae240a3e940cb4618795, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
   - name: Gun
     clip: {fileID: 8300000, guid: aed96acdf3981b74390b966ee1bcc6c4, type: 3}
     volume: 0.647

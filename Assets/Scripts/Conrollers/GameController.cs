@@ -33,8 +33,14 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-       // audio = GameObject.Find("AudioManager");
-        AudioManager.instance.Play("GameMusic");
+        // audio = GameObject.Find("AudioManager");
+        var nameScene = SceneManager.GetActiveScene().name ;
+        if (nameScene == "FirstBoss" || nameScene == "FirstLevel" || nameScene == "LevelTwo") AudioManager.instance.Play("GameMusic");
+        else
+        {
+            AudioManager.instance.Stop("GameMusic");
+            AudioManager.instance.Play("Game Music 2");
+        }
     }
 
     private void Update()
