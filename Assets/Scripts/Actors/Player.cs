@@ -33,7 +33,6 @@ public class Player : Actor
     private void LateUpdate()
     {
         this.isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-        if (health <= 0) SceneManager.LoadScene(0);
     }
 
     private void FixedUpdate()
@@ -63,7 +62,7 @@ public class Player : Actor
             ChangeWeapon();
             StopMoving(indexGun + 1);
         }
-        
+        if (health <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     protected void StopMoving(int numberGun)
@@ -95,6 +94,11 @@ public class Player : Actor
                 break;
             case "EnemyRunVirus":
                 GetDamage(damageReceived);
+                gameControl.TransformPlayer(gameObject);
+                AudioManager.instance.Play("Hit");
+                break;
+            case "FlyVirus":
+                GetDamage(1);
                 gameControl.TransformPlayer(gameObject);
                 AudioManager.instance.Play("Hit");
                 break;

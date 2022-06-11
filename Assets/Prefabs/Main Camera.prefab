@@ -491,7 +491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8539916637191580983
 RectTransform:
   m_ObjectHideFlags: 0
@@ -613,7 +613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7306699364628127414
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1722,9 +1722,12 @@ MonoBehaviour:
   textbook: {fileID: 1906684266253311911}
   controllsPoints: []
   indexControllPoints: 0
+  isSpecialThirdLevel: 0
   dialog: {fileID: 3009872811687701854}
   isActivateDialog: 0
   isBossCanMoving: 0
+  allCountFlyMonster: 3
+  countDeadFlyMonster: 0
   Healths: {fileID: 1906684265322448664}
   GunsInterface: {fileID: 5478680002182043229}
   SelectedMenu: ContentGuns
@@ -2074,7 +2077,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1906684266253311908
 RectTransform:
   m_ObjectHideFlags: 0

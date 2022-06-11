@@ -12,11 +12,16 @@ public class GameController : MonoBehaviour
 
     public Transform[] controllsPoints;
     public int indexControllPoints;
+    public bool isSpecialThirdLevel = false;
 
     public GameObject dialog;
     
     public bool isActivateDialog;
     public bool isBossCanMoving;
+
+    [Header("SpecialVariable")]
+    public int allCountFlyMonster;
+    public int countDeadFlyMonster;
 
     [Header("Contents")]
     public GameObject Healths;
@@ -52,6 +57,7 @@ public class GameController : MonoBehaviour
                 TextbookOpen();
                 AudioManager.instance.Play("Menu");
             }
+            if (countDeadFlyMonster == allCountFlyMonster) UnlockQuestionPanel();
         }
     }
 
@@ -75,7 +81,20 @@ public class GameController : MonoBehaviour
 
     public void TransformPlayer(GameObject player)
     {
-        player.transform.position = controllsPoints[indexControllPoints].transform.position;
+        if (isSpecialThirdLevel)
+        {
+            if (indexControllPoints == controllsPoints.Length - 1)
+            {
+                indexControllPoints = 0;
+                player.transform.position = controllsPoints[indexControllPoints].transform.position;
+            }
+            else
+            {
+                indexControllPoints++;
+                player.transform.position = controllsPoints[indexControllPoints].transform.position;
+            }
+        }
+        else player.transform.position = controllsPoints[indexControllPoints].transform.position;
     }
 
     public void OnNextChangeContent(string ButtonNext)

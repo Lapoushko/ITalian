@@ -72,7 +72,10 @@ public class VirusFire : Actor
     void NewPosition()
     {        
         var rnd = Random.Range(0, pointsSpawn.Length - 1);
-        transform.position = pointsSpawn[rnd].transform.position;
+        if (pointsSpawn.Length > 0)
+        {
+            transform.position = pointsSpawn[rnd].transform.position;
+        }
         time = 0;
     }
 

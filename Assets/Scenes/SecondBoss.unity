@@ -2325,9 +2325,9 @@ GameObject:
   - component: {fileID: 521785161}
   - component: {fileID: 521785163}
   - component: {fileID: 521785162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lvl2 osn0000 (29)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3503,7 +3503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906684265131001983, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: nextLevel
-      value: FirstLevel
+      value: ThirdBoss
       objectReference: {fileID: 0}
     - target: {fileID: 1906684265131001983, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: isActivateDialog
@@ -5248,9 +5248,9 @@ GameObject:
   - component: {fileID: 1586771365}
   - component: {fileID: 1586771367}
   - component: {fileID: 1586771366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: lvl2 osn0000 (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
