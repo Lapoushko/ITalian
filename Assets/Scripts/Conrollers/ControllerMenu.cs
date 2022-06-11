@@ -10,6 +10,7 @@ public class ControllerMenu : MonoBehaviour
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene("FirstLevel");
+        AudioManager.instance.Play("Menu");
     }
 
     public void ExitGame()

@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour
     {
         // audio = GameObject.Find("AudioManager");
         var nameScene = SceneManager.GetActiveScene().name ;
-        if (nameScene == "FirstBoss" || nameScene == "FirstLevel" || nameScene == "LevelTwo") AudioManager.instance.Play("GameMusic");
+        if (nameScene == "Menu" || nameScene == "FirstBoss" || nameScene == "FirstLevel" || nameScene == "LevelTwo") AudioManager.instance.Play("GameMusic");
         else
         {
             AudioManager.instance.Stop("GameMusic");
