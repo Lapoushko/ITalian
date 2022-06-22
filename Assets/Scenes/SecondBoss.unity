@@ -3503,7 +3503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1906684265131001983, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: nextLevel
-      value: ThirdBoss
+      value: ThirdLevel
       objectReference: {fileID: 0}
     - target: {fileID: 1906684265131001983, guid: d99bfd41a67bc1d43bda623cd7d5d757, type: 3}
       propertyPath: isActivateDialog
